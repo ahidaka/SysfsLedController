@@ -12,10 +12,10 @@ obj-m += sysfs_led_lib.o
 
 all: $(TARGETS)
 
-sysfs_led_test.ko:
+sysfs_led_test.ko: sysfs_led.h
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
-sysfs_led_lib.ko:
+sysfs_led_lib.ko: sysfs_led.h
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
 
 #
